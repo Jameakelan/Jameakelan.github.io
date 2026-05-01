@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - black and white theme */
+  --color-background: #202020;
+  --color-surface: #2a2a2a;
+  --color-surface-hover: #343434;
+  --color-accent: #ffffff;
+  --color-accent-secondary: #ffffff;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.78);
+  --color-text-muted: rgba(255, 255, 255, 0.58);
+  --color-glass: rgba(32, 32, 32, 0.78);
+  --color-glass-border: rgba(255, 255, 255, 0.16);
+
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+  --font-heading: 'Outfit', sans-serif;
+
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.18);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-text-primary font-sans antialiased overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass backdrop-blur-md border border-glass-border rounded-2xl shadow-xl transition-all duration-300;
+  }
+  .glass-nav {
+    @apply bg-[rgba(32,32,32,0.86)] backdrop-blur-lg border-b border-glass-border;
+  }
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 py-16 sm:px-6 sm:py-20 lg:py-24;
+  }
+  .gradient-text {
+    @apply text-accent;
+  }
+  .btn-primary {
+    @apply bg-accent text-background py-3 px-6 sm:px-8 rounded-full font-semibold transition-all duration-300 hover:shadow-glow hover:scale-105 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-transparent border-2 border-accent text-accent py-3 px-6 sm:px-8 rounded-full font-semibold transition-all duration-300 hover:bg-accent hover:text-background hover:shadow-glow hover:scale-105 active:scale-95;
+  }
+}
