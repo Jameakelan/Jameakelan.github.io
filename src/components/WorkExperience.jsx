@@ -57,9 +57,15 @@ const WorkExperience = () => {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold leading-tight text-text-primary group-hover:text-accent transition-colors">
                       {item.role}
                     </h3>
-                    <p className="mt-3 text-sm sm:text-base md:text-lg font-semibold leading-relaxed text-text-secondary">
-                      {item.organization}
-                    </p>
+                    {item.link ? (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm sm:text-base md:text-lg font-semibold leading-relaxed text-text-secondary hover:text-accent transition-colors">
+                        {item.organization}
+                      </a>
+                    ) : (
+                      <p className="mt-3 text-sm sm:text-base md:text-lg font-semibold leading-relaxed text-text-secondary">
+                        {item.organization}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

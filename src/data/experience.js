@@ -5,7 +5,8 @@ export const experienceData = [
     organization: "Skai Med",
     location: "Nakhon Ratchasima, Thailand",
     period: "May 2025 - Dec 2025",
-    type: "Full-time"
+    type: "Full-time",
+    link: "https://www.skai-med.com/"
   },
   {
     id: "exp-02",
@@ -21,7 +22,8 @@ export const experienceData = [
     organization: "Suranaree University of Technology",
     location: "Nakhon Ratchasima, Thailand",
     period: "Aug 2021 - Aug 2023",
-    type: ""
+    type: "",
+    link: "https://digitech.sut.ac.th/"
   },
   {
     id: "exp-04",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Code2, HeartPulse, Smartphone, Bot, Radio } from 'lucide-react';
+import { Github, ExternalLink, Code2, HeartPulse, Smartphone, Bot, Radio, Youtube } from 'lucide-react';
 import { projectsData } from '../data/projects';
 
 const Projects = () => {
@@ -50,6 +50,11 @@ const Projects = () => {
                   {project.links.demo && (
                     <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent transition-colors">
                       <ExternalLink size={20} />
+                    </a>
+                  )}
+                  {project.links.youtube && (
+                    <a href={project.links.youtube} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent transition-colors">
+                      <Youtube size={20} />
                     </a>
                   )}
                 </div>

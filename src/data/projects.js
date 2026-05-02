@@ -43,6 +43,8 @@ export const projectsData = [
     description: "Designed, developed, and maintained a digital platform for Khao Yai National Park to enable real-time monitoring and notification of elephant movements outside park boundaries.",
     category: "Software Development",
     technologies: ["Web Development", "IoT", "Tracking Technologies"],
-    links: {}
+    links: {
+      youtube: "https://www.youtube.com/watch?app=desktop&v=Y6ZsnnjvYRA"
+    }
   }
 ];
