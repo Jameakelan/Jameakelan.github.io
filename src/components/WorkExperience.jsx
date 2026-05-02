@@ -58,7 +58,7 @@ const WorkExperience = () => {
                       {item.role}
                     </h3>
                     {item.link ? (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm sm:text-base md:text-lg font-semibold leading-relaxed text-text-secondary hover:text-accent transition-colors">
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm sm:text-base md:text-lg font-semibold leading-relaxed text-text-secondary hover:text-accent underline decoration-text-secondary/30 hover:decoration-accent underline-offset-4 transition-all">
                         {item.organization}
                       </a>
                     ) : (
