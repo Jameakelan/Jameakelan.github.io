@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors - black and white theme */
-  --color-background: #202020;
-  --color-surface: #2a2a2a;
-  --color-surface-hover: #343434;
-  --color-accent: #ffffff;
-  --color-accent-secondary: #ffffff;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: rgba(255, 255, 255, 0.78);
-  --color-text-muted: rgba(255, 255, 255, 0.58);
-  --color-glass: rgba(32, 32, 32, 0.78);
-  --color-glass-border: rgba(255, 255, 255, 0.16);
+  /* Colors - light theme */
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  --color-accent: #111827;
+  --color-accent-secondary: #475569;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: rgba(15, 23, 42, 0.78);
+  --color-text-muted: rgba(15, 23, 42, 0.58);
+  --color-glass: rgba(255, 255, 255, 0.78);
+  --color-glass-border: rgba(15, 23, 42, 0.12);
 
   /* Fonts */
-  --font-sans: 'Inter', ui-sans-serif, system-ui;
-  --font-heading: 'Outfit', sans-serif;
+  --font-sans: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-heading: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* Shadows */
-  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.18);
+  --shadow-glow: 0 0 20px rgba(15, 23, 42, 0.16);
 }
 
 @layer base {
@@ -38,7 +38,7 @@
     @apply bg-glass backdrop-blur-md border border-glass-border rounded-2xl shadow-xl transition-all duration-300;
   }
   .glass-nav {
-    @apply bg-[rgba(32,32,32,0.86)] backdrop-blur-lg border-b border-glass-border;
+    @apply bg-[rgba(255,255,255,0.86)] backdrop-blur-lg border-b border-glass-border;
   }
   .section-container {
     @apply max-w-6xl mx-auto px-4 py-16 sm:px-6 sm:py-20 lg:py-24;

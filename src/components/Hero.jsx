@@ -1,80 +1,99 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
-import { profileData } from '../data/profile';
-import { linksData } from '../data/links';
+import { motion } from 'framer-motion'
+import {
+  ArrowDown,
+  BrainCircuit,
+  Code2,
+  HeartPulse,
+  Rocket,
+  Scale,
+  Watch,
+} from 'lucide-react'
 
-const Hero = () => {
-  return (
-    <section id="home" className="relative min-h-[100svh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/10 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-secondary/10 rounded-full blur-[120px] -z-10" />
-      
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="inline-block mb-5 px-3.5 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent text-[11px] sm:text-sm font-semibold tracking-wide uppercase"
-        >
-          Available for collaborations
-        </motion.div>
-        
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-4xl sm:text-6xl lg:text-8xl font-extrabold tracking-tight mb-5 sm:mb-6 leading-[1.08]"
-        >
-          Hi, I'm <span className="gradient-text">{profileData.name.split(' ')[0]}</span>
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-xl sm:text-2xl md:text-3xl text-text-secondary font-medium mb-6 sm:mb-8 max-w-3xl mx-auto"
-        >
-          {profileData.title}
-        </motion.p>
-        
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-base sm:text-lg text-text-muted max-w-2xl mx-auto mb-9 sm:mb-12 leading-relaxed"
-        >
-          {profileData.tagline}
-        </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5"
-        >
-          <a href="#about" className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base">
-            View Research Interests <ArrowRight size={18} />
-          </a>
-          <a href={linksData.cv} download="ak_ananyot_keawlamoon_academic_cv.pdf" className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base">
-            Download CV <Download size={18} />
-          </a>
-        </motion.div>
-      </div>
-      
-      {/* Scroll indicator */}
-      <motion.div 
+const focusAreas = [
+  { label: 'AI Engineering', icon: BrainCircuit },
+  { label: 'AI Governance', icon: Scale },
+  { label: 'Software Engineering', icon: Code2 },
+  { label: 'Digital Health', icon: HeartPulse },
+  { label: 'Wearable Sensing', icon: Watch },
+  { label: 'Startup', icon: Rocket },
+]
+
+const Hero = () => (
+  <main id="home" className="flex min-h-screen items-center bg-background px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32">
+    <section aria-labelledby="hero-title" className="mx-auto w-full max-w-5xl text-center">
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45 }}
+        className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-slate-500 sm:text-sm"
+      >
+        AI &amp; Software Engineer
+      </motion.p>
+
+      <motion.h1
+        id="hero-title"
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.08, duration: 0.55 }}
+        className="text-[clamp(2.35rem,8vw,6.5rem)] font-semibold uppercase leading-[1.02] tracking-[-0.065em] text-slate-950"
+      >
+        <span className="block sm:inline">Ananyot</span>{' '}
+        <span className="block sm:inline">Keawlamoon</span>
+      </motion.h1>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ delay: 0.35, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto my-8 h-0.5 w-16 rounded-full bg-blue-500 sm:my-10"
+      />
+
+      <motion.p
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.18, duration: 0.55 }}
+        className="mx-auto max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8"
+      >
+        I design and develop software systems that connect artificial intelligence with digital health. My interests include practical and responsibly governed AI, dependable software, wearable sensing, and turning useful ideas into technology products and startups.
+      </motion.p>
+
+      <motion.ul
+        aria-label="Areas of focus"
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.28, duration: 0.55 }}
+        className="mx-auto mt-9 flex max-w-4xl flex-wrap justify-center gap-2.5 sm:mt-10 sm:gap-3"
+      >
+        {focusAreas.map((area) => {
+          const Icon = area.icon
+
+          return (
+            <li
+              key={area.label}
+              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-300 bg-white px-4 py-2.5 text-xs font-medium text-slate-700 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 sm:px-5 sm:text-sm"
+            >
+              <Icon aria-hidden="true" size={16} strokeWidth={1.8} />
+              {area.label}
+            </li>
+          )
+        })}
+      </motion.ul>
+
+      <motion.a
+        href="#about"
+        aria-label="Continue to about section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-text-muted"
+        transition={{ delay: 0.65, duration: 0.5 }}
+        className="group mx-auto mt-12 inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.16em] text-slate-400 transition-colors hover:text-slate-950 sm:mt-16"
       >
-        <span className="text-xs uppercase tracking-widest font-semibold">Scroll Down</span>
-        <div className="w-px h-12 bg-gradient-to-b from-accent/50 to-transparent" />
-      </motion.div>
+        More about me
+        <span className="grid size-9 place-items-center rounded-full border-2 border-slate-300 bg-white transition-transform group-hover:translate-y-1 group-hover:border-slate-900">
+          <ArrowDown aria-hidden="true" size={15} strokeWidth={1.8} />
+        </span>
+      </motion.a>
     </section>
-  );
-};
+  </main>
+)
 
-export default Hero;
+export default Hero

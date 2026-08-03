@@ -1,83 +1,77 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, GraduationCap, Link2, Download, Send } from 'lucide-react';
-import { linksData } from '../data/links';
+import { motion } from 'framer-motion'
+import { ArrowUpRight, Github, Link2, Linkedin, Mail } from 'lucide-react'
+import { linksData } from '../data/links'
 
-const Contact = () => {
-  const socials = [
-    { name: 'Google Scholar', href: linksData.googleScholar, icon: <GraduationCap size={24} /> },
-    { name: 'GitHub', href: linksData.github, icon: <Github size={24} /> },
-    { name: 'LinkedIn', href: linksData.linkedin, icon: <Linkedin size={24} /> },
-    { name: 'ORCID', href: linksData.orcid, icon: <Link2 size={24} /> }
-  ].filter((social) => Boolean(social.href));
+const socialLinks = [
+  { name: 'GitHub', href: linksData.github, icon: Github },
+  { name: 'LinkedIn', href: linksData.linkedin, icon: Linkedin },
+  { name: 'ORCID', href: linksData.orcid, icon: Link2 },
+]
 
-  return (
-    <section id="contact" className="section-container">
-      <div className="flex flex-col items-center mb-10 sm:mb-16 text-center">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-        >
-          Get In <span className="gradient-text">Touch</span>
-        </motion.h2>
-        <div className="w-20 h-1.5 bg-gradient-to-r from-accent to-accent-secondary rounded-full" />
-      </div>
+const Contact = () => (
+  <section id="contact" aria-labelledby="contact-title" className="scroll-mt-28 border-t-2 border-slate-200 bg-white px-5 py-20 sm:px-8 sm:py-24 lg:py-28">
+    <div className="mx-auto max-w-4xl text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-blue-600">Contact</p>
+        <h2 id="contact-title" className="text-3xl font-semibold uppercase tracking-[-0.055em] text-slate-950 sm:text-5xl lg:text-6xl">
+          Let&apos;s work together.
+        </h2>
+        <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-500 sm:text-base sm:leading-7">
+          Open to research collaborations, software projects, digital health ideas, and conversations about responsible AI.
+        </p>
+      </motion.div>
 
-      <div className="max-w-4xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="glass-card p-6 sm:p-8 md:p-12 text-center mb-8 sm:mb-12"
-        >
-          <p className="text-base sm:text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-            I am always open to discussing research collaborations, innovative projects, or sharing insights in the field of digital health and AI.
-          </p>
+      <motion.a
+        href={`mailto:${linksData.email}`}
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.12, duration: 0.45 }}
+        className="group mx-auto mt-9 inline-flex max-w-full items-center gap-3 rounded-full border-2 border-slate-900 bg-white px-5 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-slate-950 hover:text-white sm:px-7 sm:text-base"
+      >
+        <Mail aria-hidden="true" size={17} strokeWidth={1.8} />
+        <span className="truncate">{linksData.email}</span>
+        <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} className="shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      </motion.a>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6">
-            <a 
-              href={`mailto:${linksData.email}`}
-              className="btn-primary flex items-center justify-center gap-3 text-sm sm:text-base md:text-lg py-3.5 sm:py-4 px-6 sm:px-10"
+      <motion.nav
+        aria-label="Social links"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.22, duration: 0.45 }}
+        className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
+      >
+        {socialLinks.map((link) => {
+          const Icon = link.icon
+
+          return (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-2 text-xs font-medium text-slate-500 transition-colors hover:text-blue-700 sm:text-sm"
             >
-              <Send size={20} /> Email Me
+              <Icon aria-hidden="true" size={15} strokeWidth={1.7} />
+              {link.name}
+              <ArrowUpRight aria-hidden="true" size={12} strokeWidth={1.7} className="opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
-            <a 
-              href={linksData.cv}
-              download="ak_ananyot_keawlamoon_academic_cv.pdf"
-              className="btn-secondary flex items-center justify-center gap-3 text-sm sm:text-base md:text-lg py-3.5 sm:py-4 px-6 sm:px-10"
-            >
-              <Download size={20} /> Download CV
-            </a>
-          </div>
-        </motion.div>
+          )
+        })}
+      </motion.nav>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
-          {socials.map((social, idx) => (
-            <motion.a 
-              key={social.name}
-              href={social.href}
-              target="_blank" 
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="glass-card p-4 sm:p-6 flex flex-col items-center gap-3 sm:gap-4 hover:bg-surface-hover hover:border-accent/40 group transition-all"
-            >
-              <div className="text-text-muted group-hover:text-accent transition-colors">
-                {social.icon}
-              </div>
-              <span className="text-[11px] sm:text-sm text-center font-bold text-text-secondary group-hover:text-text-primary uppercase tracking-wider">
-                {social.name}
-              </span>
-            </motion.a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+      <div className="mx-auto mt-14 h-0.5 w-12 rounded-full bg-slate-200" />
+      <p className="mt-6 text-[10px] uppercase tracking-[0.14em] text-slate-400">
+        © {new Date().getFullYear()} Ananyot Keawlamoon
+      </p>
+    </div>
+  </section>
+)
 
-export default Contact;
+export default Contact

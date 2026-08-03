@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8fafc"/>
+  <g stroke="#dbe3ee" stroke-width="1">
+    <path d="M0 70h1200M0 140h1200M0 210h1200M0 280h1200M0 350h1200M0 420h1200M0 490h1200M0 560h1200"/>
+    <path d="M80 0v630M160 0v630M240 0v630M320 0v630M400 0v630M480 0v630M560 0v630M640 0v630M720 0v630M800 0v630M880 0v630M960 0v630M1040 0v630M1120 0v630"/>
+  </g>
+  <rect x="62" y="54" width="1076" height="522" rx="42" fill="#fff" stroke="#0f172a" stroke-width="4"/>
+  <rect x="102" y="94" width="76" height="76" rx="38" fill="#fff" stroke="#0f172a" stroke-width="4"/>
+  <text x="140" y="142" text-anchor="middle" font-family="IBM Plex Mono, Menlo, monospace" font-size="25" font-weight="700" fill="#0f172a">AK</text>
+  <text x="102" y="279" font-family="IBM Plex Mono, Menlo, monospace" font-size="69" font-weight="700" letter-spacing="-5" fill="#0f172a">ANANYOT KEAWLAMOON</text>
+  <rect x="102" y="315" width="82" height="5" rx="2.5" fill="#2563eb"/>
+  <text x="102" y="382" font-family="IBM Plex Mono, Menlo, monospace" font-size="25" font-weight="500" fill="#475569">AI + SOFTWARE ENGINEERING</text>
+  <g font-family="IBM Plex Mono, Menlo, monospace" font-size="16" font-weight="500" fill="#334155">
+    <rect x="102" y="427" width="190" height="52" rx="26" fill="#eff6ff" stroke="#93c5fd" stroke-width="3"/>
+    <text x="197" y="459" text-anchor="middle">AI GOVERNANCE</text>
+    <rect x="310" y="427" width="184" height="52" rx="26" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="402" y="459" text-anchor="middle">DIGITAL HEALTH</text>
+    <rect x="512" y="427" width="222" height="52" rx="26" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="623" y="459" text-anchor="middle">WEARABLE SENSING</text>
+  </g>
+  <text x="1098" y="531" text-anchor="end" font-family="IBM Plex Mono, Menlo, monospace" font-size="17" fill="#64748b">jameakelan.github.io</text>
+</svg>

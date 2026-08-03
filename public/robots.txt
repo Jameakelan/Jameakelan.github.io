@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jameakelan.github.io/sitemap.xml

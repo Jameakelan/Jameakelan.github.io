@@ -1,12 +1,12 @@
 export const projectsData = [
   {
-    id: "cowlytix",
-    title: "Cowlytix",
-    description: "Early Signals. Smarter Decisions. Cowlytix helps dairy farms detect abnormal cow behavior earlier through wearable sensing, AI behavior intelligence, and mobile-first monitoring.",
-    category: "AI Monitoring",
-    technologies: ["Wearable Sensing", "AI Behavior Intelligence", "Mobile Monitoring"],
+    id: "govlattice",
+    title: "GovLattice",
+    description: "A Python library for defining governance and quality policies through a readable fluent API, then exporting them as deterministic YAML for Git-based review and sharing across teams.",
+    category: "AI Governance",
+    technologies: ["Python", "Policy as Code", "YAML", "AI Governance"],
     links: {
-      demo: "https://cowlytix.vercel.app/"
+      github: "https://github.com/Jameakelan/govlattice"
     }
   },
   {
@@ -18,14 +18,6 @@ export const projectsData = [
     links: {
       demo: "https://apps.apple.com/"
     }
-  },
-  {
-    id: "ncd-intelligent-systems",
-    title: "NCD Intelligent Systems & Risk Analysis",
-    description: "Developed machine learning models for hypertension percentile estimation and cholesterol prediction using physiological data, and conducted research on intelligent food recommendation systems.",
-    category: "Machine Learning",
-    technologies: ["Machine Learning", "Health Data Analytics", "Python"],
-    links: {}
   },
   {
     id: "kidney-disease-chatbot",
